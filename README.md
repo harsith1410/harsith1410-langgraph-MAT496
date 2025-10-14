@@ -20,3 +20,9 @@
   * This is basically the implementation of the Router Agent but we have just not used a LLM model but rather we made it to a random.
   * We also saw that the START and END special nodes that indicate the start and the end of the graph
   * ![img.png](img.png)
+
+---
+
+* In Video 3 we used the LangGraph Studio to plot the graphs.
+  * We used some of the predefined stuctures that were given in the course content to use tool call LLMs and show the flow through the graphs
+  * 

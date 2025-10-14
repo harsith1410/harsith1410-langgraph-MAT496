@@ -2,6 +2,9 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import MessagesState
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
+import dotenv
+
+dotenv.load_dotenv()
 
 # Tool
 def multiply(a: int, b: int) -> int:
@@ -13,9 +16,18 @@ def multiply(a: int, b: int) -> int:
     """
     return a * b
 
+def divide(a: int, b: int) -> float:
+    """Divides a/b.
+
+    Args:
+        a: first int
+        b: second int
+    """
+    return a / b
+
 # LLM with bound tool
 llm = ChatOpenAI(model="gpt-4o")
-llm_with_tools = llm.bind_tools([multiply])
+llm_with_tools = llm.bind_tools([multiply, divide])
 
 # Node
 def tool_calling_llm(state: MessagesState):
@@ -24,7 +36,7 @@ def tool_calling_llm(state: MessagesState):
 # Build graph
 builder = StateGraph(MessagesState)
 builder.add_node("tool_calling_llm", tool_calling_llm)
-builder.add_node("tools", ToolNode([multiply]))
+builder.add_node("tools", ToolNode([multiply,divide]))
 builder.add_edge(START, "tool_calling_llm")
 builder.add_conditional_edges(
     "tool_calling_llm",
