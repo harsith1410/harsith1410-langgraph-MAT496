@@ -28,3 +28,18 @@
   * We saw that instead of a simple hardcoded inputs we where able to give inputs in realtime to work like a chatbot and it would follow the flow of control
   * ![img_1.png](img_1.png)
   * We see the working of the graph over here with the logs showing the control flow
+
+---
+
+* In Video 4 we saw how chain works using basic examples
+  * We saw how chains functions through various different methods
+    * We first saw where we created a few **AIMessage** and **HumanMessage** and simulated a conversation like we see in LLM's like ChatGPT or Google Gemini
+    * We next used a ChatModel to take an input of Messages and respond to it
+    * We also built tools that can be invoked by the LLM model based on the input
+    * The workflow graph has also been plotted and presented
+    * ![img_2.png](img_2.png)
+      *  This is in the case of a tool calling LLM model where if the input asks for a particular tool function that we have specified in the model then it uses else we see that it just uses its own response to respond to the call 
+    * We also saw about reducer function that makes sure that our previous responses are being stored and are not getting overridden by the current response. This in actual Chatbots can be used to create a context to how the answer should look like or it tells the model on what we expect
+
+---
+
