@@ -58,3 +58,14 @@
 * We also explored how tracing works in the case of Graphing and all the tool calls
   * ![img_5.png](img_5.png)
 * This shows how the tracing runs through the tool calls
+
+---
+
+* In Video 7 we are expanding our domain of our knowledge so that the agent in the previous version will have a stored memory that retains the previous result so that you can use it in the next query
+  * It is like asking the LLM model to find a dataset and then after looking we ask it to find something specific
+  * We use the MemorySaver to store the chat history and store like in checkpoints
+  * ![img_4.png](img_4.png)
+  * In this we see that we have two separate LLM calls but they are dependent on the previous response
+  * ![img_6.png](img_6.png)
+  * We see that there are 3 Tool calls that happen and then based on the previous output we get the final response
+  * ![img_7.png](img_7.png)
