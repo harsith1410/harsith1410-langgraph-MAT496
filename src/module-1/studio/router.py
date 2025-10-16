@@ -16,18 +16,36 @@ def multiply(a: int, b: int) -> int:
     """
     return a * b
 
-def divide(a: int, b: int) -> float:
-    """Divides a/b.
+def divide(a: int, b: int) -> int:
+    """Divide a and b.
 
     Args:
         a: first int
         b: second int
     """
-    return a / b
+    return a // b
+
+def add(a: int, b: int) -> int:
+    """Add a and b.
+
+    Args:
+        a: first int
+        b: second int
+    """
+    return a + b
+
+def sub(a: int, b: int) -> int:
+    """Subtract a and b.
+
+    Args:
+        a: first int
+        b: second int
+    """
+    return a - b
 
 # LLM with bound tool
-llm = ChatOpenAI(model="gpt-4o")
-llm_with_tools = llm.bind_tools([multiply, divide])
+llm = ChatOpenAI(model="gpt-5-nano-2025-08-07")
+llm_with_tools = llm.bind_tools([multiply, divide,add, sub])
 
 # Node
 def tool_calling_llm(state: MessagesState):
@@ -36,7 +54,7 @@ def tool_calling_llm(state: MessagesState):
 # Build graph
 builder = StateGraph(MessagesState)
 builder.add_node("tool_calling_llm", tool_calling_llm)
-builder.add_node("tools", ToolNode([multiply,divide]))
+builder.add_node("tools", ToolNode([multiply,divide,add,sub]))
 builder.add_edge(START, "tool_calling_llm")
 builder.add_conditional_edges(
     "tool_calling_llm",

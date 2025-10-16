@@ -43,3 +43,11 @@
 
 ---
 
+* In Video 5 we had previously seen how routers work by manually adding a condition edge and based on the condition it follows a path
+  * In this part we used a LLM model which has a few tools that we have defined and whenever we have a tool call it calls and returns the function or else it gives a generic response
+  * For the tool calling conditional statement we use the inbuilt **tools_condition** special word to have a conditional edge for tools.
+  * We also use the **ToolNode** that is used to run a tool call and return
+  * ![img_3.png](img_3.png)
+  * Here in the first case it goes through the tool call and in the second method it does not use the tool call
+
+---
