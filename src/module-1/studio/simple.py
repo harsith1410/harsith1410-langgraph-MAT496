@@ -3,9 +3,15 @@ from typing import Literal
 from typing_extensions import TypedDict
 from langgraph.graph import StateGraph, START, END
 import dotenv
-
+import os
 
 dotenv.load_dotenv()
+
+# 2. Now, access the key. The script will find it.
+LANGSMITH_API_KEY = os.getenv("LANGSMITH_API_KEY")
+
+os.environ["LANGSMITH_API_KEY"] = LANGSMITH_API_KEY
+
 
 # State
 class State(TypedDict):

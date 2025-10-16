@@ -7,7 +7,6 @@ import dotenv
 
 dotenv.load_dotenv()
 
-
 def add(a: int, b: int) -> int:
     """Adds a and b.
 

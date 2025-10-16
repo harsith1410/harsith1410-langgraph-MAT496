@@ -25,4 +25,6 @@
 
 * In Video 3 we used the LangGraph Studio to plot the graphs.
   * We used some of the predefined stuctures that were given in the course content to use tool call LLMs and show the flow through the graphs
-  * 
+  * We saw that instead of a simple hardcoded inputs we where able to give inputs in realtime to work like a chatbot and it would follow the flow of control
+  * ![img_1.png](img_1.png)
+  * We see the working of the graph over here with the logs showing the control flow
