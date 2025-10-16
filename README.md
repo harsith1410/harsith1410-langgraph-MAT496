@@ -19,14 +19,14 @@
 * In Video 2 we saw on how to construct a basic graph and using conditional edges.
   * This is basically the implementation of the Router Agent but we have just not used a LLM model but rather we made it to a random.
   * We also saw that the START and END special nodes that indicate the start and the end of the graph
-  * ![img.png](img.png)
+  * ![img.png](Images/img.png)
 
 ---
 
 * In Video 3 we used the LangGraph Studio to plot the graphs.
   * We used some of the predefined stuctures that were given in the course content to use tool call LLMs and show the flow through the graphs
   * We saw that instead of a simple hardcoded inputs we where able to give inputs in realtime to work like a chatbot and it would follow the flow of control
-  * ![img_1.png](img_1.png)
+  * ![img_1.png](Images/img_1.png)
   * We see the working of the graph over here with the logs showing the control flow
 
 ---
@@ -37,7 +37,7 @@
     * We next used a ChatModel to take an input of Messages and respond to it
     * We also built tools that can be invoked by the LLM model based on the input
     * The workflow graph has also been plotted and presented
-    * ![img_2.png](img_2.png)
+    * ![img_2.png](Images/img_2.png)
       *  This is in the case of a tool calling LLM model where if the input asks for a particular tool function that we have specified in the model then it uses else we see that it just uses its own response to respond to the call 
     * We also saw about reducer function that makes sure that our previous responses are being stored and are not getting overridden by the current response. This in actual Chatbots can be used to create a context to how the answer should look like or it tells the model on what we expect
 
@@ -47,7 +47,7 @@
   * In this part we used a LLM model which has a few tools that we have defined and whenever we have a tool call it calls and returns the function or else it gives a generic response
   * For the tool calling conditional statement we use the inbuilt **tools_condition** special word to have a conditional edge for tools.
   * We also use the **ToolNode** that is used to run a tool call and return
-  * ![img_3.png](img_3.png)
+  * ![img_3.png](Images/img_3.png)
   * Here in the first case it goes through the tool call and in the second method it does not use the tool call
 
 ---
@@ -56,7 +56,7 @@
   hence we implement the concept of **ReAct** where whenever a tool call is done it goes back to the LLM and checks if there are any other tool calls to be done or that's it and should it give the final output
 * So what we have done in this is implement a flow control where the tool call edge redirects back to the LLM's conditional edge.
 * We also explored how tracing works in the case of Graphing and all the tool calls
-  * ![img_5.png](img_5.png)
+  * ![img_5.png](Images/img_5.png)
 * This shows how the tracing runs through the tool calls
 
 ---
@@ -64,8 +64,8 @@
 * In Video 7 we are expanding our domain of our knowledge so that the agent in the previous version will have a stored memory that retains the previous result so that you can use it in the next query
   * It is like asking the LLM model to find a dataset and then after looking we ask it to find something specific
   * We use the MemorySaver to store the chat history and store like in checkpoints
-  * ![img_4.png](img_4.png)
+  * ![img_4.png](Images/img_4.png)
   * In this we see that we have two separate LLM calls but they are dependent on the previous response
-  * ![img_6.png](img_6.png)
+  * ![img_6.png](Images/img_6.png)
   * We see that there are 3 Tool calls that happen and then based on the previous output we get the final response
-  * ![img_7.png](img_7.png)
+  * ![img_7.png](Images/img_7.png)
