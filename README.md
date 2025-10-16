@@ -51,3 +51,10 @@
   * Here in the first case it goes through the tool call and in the second method it does not use the tool call
 
 ---
+
+* In Video 6 we had seen routers in Video 5, but we have an issue that is the issue of multiple tool calls whenever we had more than 1 tool call in the question it would not be able to process the other tool calls,
+  hence we implement the concept of **ReAct** where whenever a tool call is done it goes back to the LLM and checks if there are any other tool calls to be done or that's it and should it give the final output
+* So what we have done in this is implement a flow control where the tool call edge redirects back to the LLM's conditional edge.
+* We also explored how tracing works in the case of Graphing and all the tool calls
+  * ![img_5.png](img_5.png)
+* This shows how the tracing runs through the tool calls
