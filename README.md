@@ -93,3 +93,8 @@
 
 ---
 
+* In Video 3 we saw how to use different states or graph schema's
+  * We saw on case where we had our incoming state in one mode and the outgoing state being a different one
+  * We also saw on how to use the input and output schema's that we have seen in the previous modules
+
+  * I have made some changes to the private state by tweaking in on how those states work and then I have changed the input and output works differently in different cases 
