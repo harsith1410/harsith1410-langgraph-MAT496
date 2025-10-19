@@ -69,3 +69,17 @@
   * ![img_6.png](Images/img_6.png)
   * We see that there are 3 Tool calls that happen and then based on the previous output we get the final response
   * ![img_7.png](Images/img_7.png)
+
+---
+
+## Module 2
+
+---
+
+* In Video 1 of this module we saw the different types of schema states that were available to use to declare a graph state
+  * We saw about **TypedDict** which is a structed data structure that is available in python and it worked similar to the usage of a dictionary
+  * We then saw about the **Data Class** schema that was another way to do the state schema but we saw that it had an issue which could take garbage or unnecessary or wrong details if feeded into it
+  * Then we saw about the **Pydantic** which had a validator option that could help validate the inputs that we get and makes sure no wrong inputs are given
+
+---
+
