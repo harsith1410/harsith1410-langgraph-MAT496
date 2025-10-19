@@ -83,3 +83,13 @@
 
 ---
 
+* In Video 2 we saw about reducers
+  * We saw that whenever there where changes made to the graph properties it automatically overrides on default, but when have have 2 parallel processes we see that the graph does not know which state to update and throws us an exception
+  * To eliminate this issue we saw about reducers that had some inbuilt properties like appending the value to the Node/Graph properties
+  * But in order to eliminate the possibility of edge cases like when we have **NONE** and a **list** it was not possible to add these two so we learnt how to create our own custom reducers that help tackle these edge cases
+  * We then saw about **MessagesState** in which we also saw about the **update** and **delete** properties that can also be exhibited by reducers
+
+  * I have made changes in the custom reducers where different cases are handled in different ways according to the satisfied condition and have made changes in the **MessageUpdate** to just look like a communication of simulated 
+
+---
+
