@@ -98,3 +98,19 @@
   * We also saw on how to use the input and output schema's that we have seen in the previous modules
 
   * I have made some changes to the private state by tweaking in on how those states work and then I have changed the input and output works differently in different cases 
+
+---
+
+* In Video 4 we saw about filters and trims, these methods can be used to save memory by reducing the number of messages sent to the AI Chat Model, these are useful to save tokens that works like a currency
+  * We used filters using the **RemoveMessages** that was available to use in the **addMessages** reducers
+  * ![img.png](img.png) ![img_1.png](img_1.png)
+  * We see that when we have given a filter of last 3 the invoke sends only the last 3 messages to the ChatModel instead of sending all the messages
+  * We then saw the trimming methods that would limit the number of tokens that is being sent to the model
+  * We also saw that we can filter some messages and invoke the graph using a subset of the messages and passing it to the chat model
+    ![img_2.png](img_2.png)
+  * We see that by limiting the number of tokens it eventhough makes it cheaper it is possible that the ChatModel might not have enough context to answer the question properly
+    ![img_3.png](img_3.png)
+  * In this case we still maintain the relevance, so it is basically a balance between the two either relevance and correct data or risk getting irrelevant data but less cost
+
+---
+
