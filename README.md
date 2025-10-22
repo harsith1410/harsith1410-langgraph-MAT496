@@ -125,3 +125,10 @@
 
 ---
 
+* In Video 6 we used an external memory like databases such as sqlite, MySQL inorder to have the previous conversation checkpoints,
+  these not only store data in the runtime but can also be used to store messages for more time in the user's computer and can also be easy 
+  for portability which makes it a more efficient method, we have simulated a simple conversation between two F1 fans and get their opinions
+  * ![img_6.png](img_6.png)
+* Here we could see that I had passed 5 messages and it automatically summerizes when the messages go more than 4
+* Also the running of the code in LangGraph Studio was done from Module-1 since I had an issue with the running through Module-2
+---
