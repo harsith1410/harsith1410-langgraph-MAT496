@@ -114,3 +114,14 @@
 
 ---
 
+* In Video 5 we saw about summerazation which is also an another method to save memory, in this what it does is that instead of having all the messages in the memory, we reduce them into summaries at each step so that it has less tokens but
+  it also solves an issue that we had previously that was maintaining the context so in this case the context is maintained even though it might not contain the exact specifications,
+  * We use the **MemorySaver** that can be used to create checkpoints previously to do this
+  * ![img_4.png](img_4.png)
+  * We see that whenever there was more than 4 messages it automatically summerizes the coversation till then and then for the next conversation,
+    we see that is would be taken in as Input
+  * ![img_5.png](img_5.png)
+  * This is a better way to save memory when compared to filters and trims
+
+---
+
