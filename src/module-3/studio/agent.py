@@ -1,8 +1,12 @@
+import dotenv
 from langchain_core.messages import SystemMessage
 from langchain_openai import ChatOpenAI
+from langchain_tavily import TavilySearch
 
 from langgraph.graph import START, StateGraph, MessagesState
 from langgraph.prebuilt import tools_condition, ToolNode
+
+dotenv.load_dotenv()
 
 def add(a: int, b: int) -> int:
     """Adds a and b.
@@ -31,10 +35,18 @@ def divide(a: int, b: int) -> float:
     """
     return a / b
 
-tools = [add, multiply, divide]
+def web_search(search:str) -> str:
+
+    """Whenever the user asks you to search something to find the content use this method"""
+
+    result = TavilySearch(max_results=1).invoke(search)
+
+    return result
+
+tools = [add, multiply, divide, web_search]
 
 # Define LLM with bound tools
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(model="gpt-5-nano-2025-08-07")
 llm_with_tools = llm.bind_tools(tools)
 
 # System message

@@ -1,6 +1,9 @@
 from typing_extensions import TypedDict
 from langgraph.errors import NodeInterrupt
 from langgraph.graph import START, END, StateGraph
+import dotenv
+
+dotenv.load_dotenv()
 
 class State(TypedDict):
     input: str
