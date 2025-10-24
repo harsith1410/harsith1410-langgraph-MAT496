@@ -143,3 +143,4 @@
   the updates after everything was complete, which allowed me to listen for specific events like on_chat_model_stream and access the token chunks as they are generated. 
   We also saw about the LangGraph API application and how we could use them from the IDE and also the availablity of a new streaming method **messages** that
   updated the final message token by token and gave us the Output.
+  ![img_7.png](img_7.png)
