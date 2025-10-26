@@ -157,3 +157,9 @@
 * In Video 3 we saw on how we can use these interrupts that we have used to maybe even change the input values
   this will allow the user to have changes to the output if the user thinks so
   ![img_10.png](img_10.png)
+
+---
+
+* In Video 4 we saw about the concept of dynamic breakpoints, this method is another type of interrupt where the interrupt can happen at any point of the graph
+  flow. It is basically like a check done at each step and then the output is found out
+  ![img_11.png](img_11.png)
