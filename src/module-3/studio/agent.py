@@ -61,5 +61,5 @@ builder.add_conditional_edges(
 builder.add_edge("tools", "assistant")
 
 memory = MemorySaver()
-graph = builder.compile(interrupt_before=["tools"])
+graph = builder.compile(interrupt_before=["assistant"])
 

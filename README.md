@@ -151,3 +151,9 @@
   this ensures that the work done by the AI model is correct and can also look into what the AI model thinks of the condition and rectify it
   ![img_8.png](img_8.png)![img_9.png](img_9.png)
 * We see that an interupt request was present and then the changes where done
+
+---
+
+* In Video 3 we saw on how we can use these interrupts that we have used to maybe even change the input values
+  this will allow the user to have changes to the output if the user thinks so
+  ![img_10.png](img_10.png)
