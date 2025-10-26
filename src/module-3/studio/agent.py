@@ -1,65 +1,56 @@
-import dotenv
-from langchain_core.messages import SystemMessage
 from langchain_openai import ChatOpenAI
-from langchain_tavily import TavilySearch
-
-from langgraph.graph import START, StateGraph, MessagesState
+from IPython.display import Image, display
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.graph import MessagesState
+from langgraph.graph import START, StateGraph
 from langgraph.prebuilt import tools_condition, ToolNode
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+from dotenv import load_dotenv
 
-dotenv.load_dotenv()
+load_dotenv()
 
-def add(a: int, b: int) -> int:
-    """Adds a and b.
-
-    Args:
-        a: first int
-        b: second int
+def tyre_strat(Laps_Remaining: int,Laps_Done: int,Safety_Car: bool) -> str:
     """
-    return a + b
-
-def multiply(a: int, b: int) -> int:
-    """Multiplies a and b.
-
-    Args:
-        a: first int
-        b: second int
+    This is used to suggest if the Driver needs to Box and Change Tyres
     """
-    return a * b
+    if Laps_Done > 15  :
+        return "Box for New Hards"
+    elif (Laps_Remaining<15 and Safety_Car):
+        return "Box for a set of Softs and time to Turn and Burn"
+    else:
+        return "Stay Out!! Stay Out!! Stay Out!!"
 
-def divide(a: int, b: int) -> float:
-    """Adds a and b.
-
-    Args:
-        a: first int
-        b: second int
+def Wet_Condition(is_raining: bool,drivability: bool) -> str:
     """
-    return a / b
+    If there exists a wet condition use this
+    """
+    if drivability:
+        return "Let's drive in until the brink of toughness"
+    elif is_raining and (not drivability):
+        return "Box for Wets and Unleash Hell"
+    else:
+        return "Stay Out!! Stay Out!! Stay Out!!"
 
-def web_search(search:str) -> str:
 
-    """Whenever the user asks you to search something to find the content use this method"""
-
-    result = TavilySearch(max_results=1).invoke(search)
-
-    return result
-
-tools = [add, multiply, divide, web_search]
-
-# Define LLM with bound tools
-llm = ChatOpenAI(model="gpt-5-nano-2025-08-07")
+tools = [tyre_strat,Wet_Condition]
+llm = ChatOpenAI(model="gpt-4o")
 llm_with_tools = llm.bind_tools(tools)
 
 # System message
-sys_msg = SystemMessage(content="You are a helpful assistant tasked with writing performing arithmetic on a set of inputs.")
+sys_msg = SystemMessage(content="You are a F1 Race Engineer to driver and help the driver")
 
 # Node
 def assistant(state: MessagesState):
    return {"messages": [llm_with_tools.invoke([sys_msg] + state["messages"])]}
 
-# Build graph
+# Graph
 builder = StateGraph(MessagesState)
+
+# Define nodes: these do the work
 builder.add_node("assistant", assistant)
 builder.add_node("tools", ToolNode(tools))
+
+# Define edges: these determine the control flow
 builder.add_edge(START, "assistant")
 builder.add_conditional_edges(
     "assistant",
@@ -69,5 +60,6 @@ builder.add_conditional_edges(
 )
 builder.add_edge("tools", "assistant")
 
-# Compile graph
-graph = builder.compile()
+memory = MemorySaver()
+graph = builder.compile(interrupt_before=["tools"])
+

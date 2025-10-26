@@ -144,3 +144,10 @@
   We also saw about the LangGraph API application and how we could use them from the IDE and also the availablity of a new streaming method **messages** that
   updated the final message token by token and gave us the Output.
   ![img_7.png](img_7.png)
+
+---
+
+* In Video 2 we saw how to add a Human in Loop where the AI model or ChatModel does not work alone rather it takes the help of an Human Assistant to allow certain conditions to happen,
+  this ensures that the work done by the AI model is correct and can also look into what the AI model thinks of the condition and rectify it
+  ![img_8.png](img_8.png)![img_9.png](img_9.png)
+* We see that an interupt request was present and then the changes where done
