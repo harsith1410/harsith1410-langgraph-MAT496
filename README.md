@@ -163,3 +163,12 @@
 * In Video 4 we saw about the concept of dynamic breakpoints, this method is another type of interrupt where the interrupt can happen at any point of the graph
   flow. It is basically like a check done at each step and then the output is found out
   ![img_11.png](img_11.png)
+
+---
+
+* In Video 5 we saw about a concept called **time travel**, it is nothing to be confused about but what it allows us to do is that,
+  we could climb back into the flow and re-run the nodes, change the values and re-run it so these are basically interrupting and saying I want 
+  to change my question, what we have done is similar to what we have done in **Video 3** but instead of stopping we run through and then we go back
+  and say I have a different thing to do.
+  * We saw in the first part how to re-run the same input which has a chance of increasing the accuracy of the Output
+  * We then saw the case where we could change the input statement to 
