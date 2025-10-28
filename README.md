@@ -172,3 +172,17 @@
   and say I have a different thing to do.
   * We saw in the first part how to re-run the same input which has a chance of increasing the accuracy of the Output
   * We then saw the case where we could change the input statement to 
+
+---
+
+# Module 4
+
+---
+
+* In the first Video we saw about Parallelization which let's us run multiple steps parallely,
+  we saw about the difficulties that it would create like ambiguity when a single state key is modified 
+  by 2 nodes and how to overcome using **reducers**, we also saw about **Fan IN** and **Fan OUT** and
+  what it meant.
+* This is a practical demonstration of how it works
+
+![img_12.png](img_12.png)
