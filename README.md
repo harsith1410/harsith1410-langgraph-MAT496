@@ -189,10 +189,10 @@
 
 ---
 
-* In Video 2 we extended the concept of parallelization to use multiple disjoint graphs together,
-  we saw how we can use multiple graphs and 2 subgraphs that where to used to find two different details and 
-  then we combined those outputs to get to a final conclusion.
-* This is important because it lets us build complex and efficient workflows by nesting smaller, independent 
-graphs inside a larger one
-![img_13.png](img_13.png)
-![img_14.png](img_14.png)
+* In this video, we took parallelization a step further by using multiple, independent graphs simultaneously.
+* We demonstrated how two separate subgraphs can run in parallel, each designed to find different pieces of information. Once they completed their individual tasks, we combined their outputs to reach a final conclusion.
+* This technique is powerful because it allows us to build complex and efficient workflows by nesting smaller, independent graphs inside a larger one.
+  ![img_13.png](img_13.png)
+  ![img_14.png](img_14.png)
+
+---
