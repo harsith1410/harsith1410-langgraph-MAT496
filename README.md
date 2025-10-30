@@ -186,3 +186,13 @@
 * This is a practical demonstration of how it works
 
 ![img_12.png](img_12.png)
+
+---
+
+* In Video 2 we extended the concept of parallelization to use multiple disjoint graphs together,
+  we saw how we can use multiple graphs and 2 subgraphs that where to used to find two different details and 
+  then we combined those outputs to get to a final conclusion.
+* This is important because it lets us build complex and efficient workflows by nesting smaller, independent 
+graphs inside a larger one
+![img_13.png](img_13.png)
+![img_14.png](img_14.png)
