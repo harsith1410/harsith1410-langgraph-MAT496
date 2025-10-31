@@ -196,3 +196,9 @@
   ![img_14.png](img_14.png)
 
 ---
+
+* In Video 3 we saw on how to use the map-reduce patterns to make the graphs more efficient.
+  * It also shows on how to break larger tasks into smaller sub-tasks or parallel tasks and compile their result into a
+    single conclusion or result
+  ![img_15.png](img_15.png)
+  * This image shows the working flow of the graph and how it actually works
